@@ -51,6 +51,7 @@ Bundle 'scrooloose/nerdtree'
 " Plugin 'vim-scripts/taglist.vim'
 " Plugin 'powerline/powerline'
 Plugin 'bling/vim-airline'
+Plugin 'szw/vim-tags'
 
 
 let g:ctrlp_map = '<Leader>t'
@@ -158,7 +159,10 @@ nnoremap <C-s> :w<cr>
 " nnoremap <F10> :w rerunplease.tmp<CR>:w<cr>
 
 nnoremap ; :
-nnoremap <F10> ebye /<C-R>"
+nnoremap <F10> ebye /<C-R>"<CR>
+nnoremap <F9> ebye ?<C-R>"<CR>n
+nnoremap <Space> <C-f>
+nnoremap <C-Space> <C-b>
 map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
