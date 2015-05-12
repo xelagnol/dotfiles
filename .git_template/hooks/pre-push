@@ -7,21 +7,33 @@ do
     :
     if [ $protected_branch = $current_branch ]  
     then  
-        read -p "You're about to push $protected_branch, is that what you intended? [y|n] " -n 1 -r < /dev/tty
+        read -p "You're about to push to $protected_branch, is that what you intended? [y|n] " -n 1 -r < /dev/tty
         echo
         if echo $REPLY | grep -E '^[Yy]$' > /dev/null
         then
+            echo "Okie dokie, will push to $protected_branch"
             : # do nothing
         else
+            echo "Push aborted"
             exit 1 # push will not execute
         fi
     fi  
 
 done
-read -p "Did you run tests? [y|n] " -n 1 -r < /dev/tty
+read -p "Did you run tests? [y|n|x] (x = no, but that's ok) " -n 1 -r < /dev/tty
 echo
+if echo $REPLY | grep -E '^[Nn]$' > /dev/null
+then
+    echo "Go run those tests!"
+    echo "Push aborted"
+    exit 1 # push will not execute
+fi
+
 if echo $REPLY | grep -E '^[Yy]$' > /dev/null
 then
-    exit 0 # push will execute
+    echo "Great job!"
+elif echo $REPLY | grep -E '^[Xx]$' > /dev/null
+then
+    echo "Ok, pushing without tests"
 fi
-exit 1 # push will not execute
+exit 0 # push will execute
