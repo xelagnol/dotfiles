@@ -22,18 +22,15 @@ do
 done
 read -p "Did you run tests? [y|n|x] (x = no, but that's ok) " -n 1 -r < /dev/tty
 echo
-if echo $REPLY | grep -E '^[Nn]$' > /dev/null
-then
-    echo "Go run those tests!"
-    echo "Push aborted"
-    exit 1 # push will not execute
-fi
-
 if echo $REPLY | grep -E '^[Yy]$' > /dev/null
 then
     echo "Great job!"
 elif echo $REPLY | grep -E '^[Xx]$' > /dev/null
 then
     echo "Ok, pushing without tests"
+else
+    echo "Go run those tests!"
+    echo "Push aborted"
+    exit 0 # push will execute
 fi
-exit 0 # push will execute
+exit 1 # push will not execute
