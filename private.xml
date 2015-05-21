@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<root>
+    <item>
+    <name>Change Control-L + Delete to Option-L + Delete</name>
+    <identifier>private.controll_and_del_to_optionl_and_del</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::DELETE, ModifierFlag::CONTROL_L,
+      KeyCode::DELETE, ModifierFlag::OPTION_L
+    </autogen>
+  </item>
+</root>
