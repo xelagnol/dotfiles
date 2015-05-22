@@ -31,6 +31,6 @@ then
 else
     echo "Go run those tests!"
     echo "Push aborted"
-    exit 0 # push will execute
+    exit 1 # push will not execute
 fi
-exit 1 # push will not execute
+exit 0 # push will execute
