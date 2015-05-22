@@ -52,7 +52,7 @@ Bundle 'mintplant/vim-literate-coffeescript'
 " Plugin 'powerline/powerline'
 Plugin 'bling/vim-airline'
 Plugin 'szw/vim-tags'
-
+Bundle '907th/vim-auto-save'
 
 let g:ctrlp_map = '<Leader>t'
 let g:ctrlp_custom_ignore = {
