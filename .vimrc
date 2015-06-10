@@ -100,9 +100,11 @@ let g:solarized_termtrans=1
 
 autocmd FileType tex set wrap|set textwidth=65
 autocmd FileType markdown set wrap|set textwidth=65|set shiftwidth=4|set tabstop=4
+autocmd FileType config setf dosini
 au BufNewFile,BufRead *.txt set filetype=markdown
 au BufNewFile,BufRead *.md set filetype=markdown
 au BufNewFile,BufRead *.tex set filetype=tex
+au BufNewFile,BufRead *.conf set filetype=config
 
 au BufNewFile,BufRead *.R set filetype=r
 au FileType python set omnifunc=pythoncomplete#Complete
@@ -174,7 +176,7 @@ map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
-nmap <silent> ,/ :nohlsearch<CR>
+nnoremap <silent> ,/ :nohlsearch<CR>
 
 " Shift should be for less frequently used characters!
 nnoremap 8 *
@@ -183,13 +185,17 @@ inoremap 9 (
 inoremap ( 9
 inoremap 0 )
 inoremap ) 0
+
 nnoremap ' "
 nnoremap " '
 inoremap ' "
 inoremap " '
+
 nnoremap _ -
 nnoremap - _
 inoremap _ -
+inoremap - _
+
 inoremap ; :
 inoremap : ;
 nnoremap ; :
