@@ -11,9 +11,22 @@ export ANDROID_HOME='/Users/alex.long/pu/sdk'
 alias ls='ls -GFh'
 alias ctags='/usr/local/bin/ctags'
 alias grep='grep --color'
+alias g='grep -ri'
+alias gw='grep -wri'
+alias f='find'
 alias cdalot='. /scripts/cdalot'
 alias ssh_tapio="ssh invincea@172.20.11.191 -t tmux a"
 alias ssh_tapio_no_tmux="ssh invincea@172.20.11.191"
+
+function gh { 
+    totalfs=`du -sh | awk '{print $1 }'`
+    echo "Grepping through $totalfs worth of files."
+    g "$1" .
+}
+export -f gh
+
+function fh { f . -iname "*$1*"; }
+export -f fh
 
 case ${TERM} in
 
