@@ -204,6 +204,11 @@ nnoremap : ;
 nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
 set showmode
+
+" Quickly open/reload vim
+nnoremap <leader>ev :split $MYVIMRC<CR>  
+nnoremap <leader>sv :source $MYVIMRC<CR> 
+
 " " Vim airline
 " set laststatus=2
 " let g:airline#extensions#tagbar#enabled = 1
