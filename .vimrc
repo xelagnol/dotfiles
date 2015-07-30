@@ -201,6 +201,8 @@ inoremap : ;
 nnoremap ; :
 nnoremap : ;
 
+" Toggle paste mode
+set pastetoggle=<leader>p
 " " Vim airline
 " set laststatus=2
 " let g:airline#extensions#tagbar#enabled = 1
