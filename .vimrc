@@ -168,8 +168,8 @@ nnoremap <C-s> :w<cr>
 " nnoremap <F10> :w rerunplease.tmp<CR>:w<cr>
 
 nnoremap g: g;
-nnoremap <F10> ebye /<C-R>"<CR>
-nnoremap <F9> ebye ?<C-R>"<CR>n
+nnoremap <F9> ebye /<C-R>"<CR>
+nnoremap <F8> ebye ?<C-R>"<CR>n
 nnoremap <Space> <C-f>
 nnoremap <C-Space> <C-b>
 map <C-h> <C-w>h
