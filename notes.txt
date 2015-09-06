@@ -1,0 +1,3 @@
+you should install:
+    homebrew (mac only)
+    trash-cli
