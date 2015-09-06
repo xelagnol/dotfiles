@@ -9,10 +9,10 @@ map <ScrollWheelDown> <C-E><C-E><C-E><C-E>
 filetype off
 
 set shell=bash
-set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
 
-Plugin 'gmarik/Vundle.vim'
+Plugin 'gmarik/vundle'
 " Plugin 'Valloric/YouCompleteMe'
 Plugin 'tpope/vim-fugitive'
 " fugitive lets you execute git commands from with vim, ex: ':Gstatus'
@@ -45,7 +45,7 @@ Bundle 'kchmck/vim-coffee-script'
 " Bundle 'dag/vim-fish'
 Bundle 'scrooloose/nerdtree'
 Bundle 'tpope/vim-markdown'
-Bundle 'mintplant/vim-literate-coffeescript'
+Bundle 'jwhitley/vim-literate-coffeescript'
 " Bundle 'groenewege/vim-less'
 " Plugin 'szw/vim-tags'
 " Plugin 'vim-scripts/taglist.vim'
