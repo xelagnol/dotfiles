@@ -2,7 +2,7 @@
 	helper = cache --timeout=3600
 [user]
 	name = Alex Long
-	email = alex.long@invincea.com
+	email = shiversandmilk@gmail.com
 [push]
 	default = current
 [filter "hawser"]

@@ -3,7 +3,6 @@ export CLICOLOR=1
 stty -ixon
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
-export ANDROID_HOME='/Users/alex.long/pu/sdk'
 alias ls='ls -GFh'
 alias ctags='/usr/local/bin/ctags'
 alias grep='grep --color'

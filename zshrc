@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/alex.long/.oh-my-zsh
+export ZSH=/Users/alexlong/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -53,7 +53,7 @@ plugins=(git)
 
 # User configuration
 
-export PATH="/usr/local/mysql/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Users/alex.long/pu/sdk/platform-tools:/Users/alex.long/pu/sdk/tools:/Users/alex.long/pu/:/Users/alex.long/pu/apktool:/Users/alex.long/pu/sdk/build-tools/android-4.4.2:/Users/alex.long/android_stuff:/Users/alex.long/android_stuff/sadb:/opt/X11/bin:/usr/local/MacGPG2/bin"
+export PATH="/usr/local/mysql/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/MacGPG2/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh

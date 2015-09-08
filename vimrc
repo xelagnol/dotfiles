@@ -53,13 +53,13 @@ Bundle 'jwhitley/vim-literate-coffeescript'
 " Plugin 'bling/vim-airline' " Displays info about what function block you're
 " in, disabled because it can really hurt vim performance
 " Plugin 'szw/vim-tags'
-Bundle '907th/vim-auto-save'
+" Bundle '907th/vim-auto-save'
 
-let g:auto_save = 1  " enable AutoSave on Vim startup
-let g:auto_save_no_updatetime = 1  " do not change the 'updatetime' option
-let g:auto_save_in_insert_mode = 0  " do not save while in insert mode
-let g:auto_save_silent = 1  " do not display the auto-save notification
-let g:auto_save_events = ["InsertLeave", "TextChanged"]
+" let g:auto_save = 1  " enable AutoSave on Vim startup
+" let g:auto_save_no_updatetime = 1  " do not change the 'updatetime' option
+" let g:auto_save_in_insert_mode = 0  " do not save while in insert mode
+" let g:auto_save_silent = 1  " do not display the auto-save notification
+" let g:auto_save_events = ["InsertLeave", "TextChanged"]
 
 let g:ctrlp_map = '<Leader>t'
 let g:ctrlp_custom_ignore = {
@@ -84,7 +84,7 @@ set cursorline
 set ignorecase
 set smartcase
 set undofile
-set undodir=/Users/alex.long/.vimundo/
+set undodir=/Users/alexlong/.vimundo/
 set gfn=Monospace\ 9 " sets font
 
 "if has('gui_running')
