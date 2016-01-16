@@ -13,7 +13,7 @@ set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
 
 Plugin 'gmarik/vundle'
-" Plugin 'Valloric/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'tpope/vim-fugitive'
 " fugitive lets you execute git commands from with vim, ex: ':Gstatus'
 " Bundle 'tpope/vim-fugitive'
