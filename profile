@@ -16,6 +16,7 @@ alias del="trash-put"
 alias ssh_tapio="ssh invincea@172.20.11.191 -t tmux a"
 alias ssh_tapio_no_tmux="ssh invincea@172.20.11.191"
 alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
+alias vi='/Applications/MacVim.app/Contents/MacOS/Vim'
 
 function fh { f . -iname "*$1*"; }
 export fh
