@@ -170,6 +170,7 @@ nnoremap <C-s> :w<cr>
 nnoremap g: g;
 nnoremap <F9> ebye /<C-R>"<CR>
 nnoremap <F8> ebye ?<C-R>"<CR>n
+nnoremap <F4> :Gstatus<CR>
 nnoremap <Space> <C-f>
 nnoremap <C-Space> <C-b>
 map <C-h> <C-w>h
