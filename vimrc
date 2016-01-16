@@ -179,23 +179,23 @@ map <C-l> <C-w>l
 nnoremap <silent> ,/ :nohlsearch<CR>
 
 " Shift should be for less frequently used characters!
-inoremap 9 (
-inoremap ( 9
-inoremap 0 )
-inoremap ) 0
-
-nnoremap ' "
-nnoremap " '
-inoremap ' "
-inoremap " '
-
-nnoremap _ -
-nnoremap - _
-inoremap _ -
-inoremap - _
-
-inoremap ; :
-inoremap : ;
+" inoremap 9 (
+" inoremap ( 9
+" inoremap 0 )
+" inoremap ) 0
+"
+" nnoremap ' "
+" nnoremap " '
+" inoremap ' "
+" inoremap " '
+"
+" nnoremap _ -
+" nnoremap - _
+" inoremap _ -
+" inoremap - _
+"
+" inoremap ; :
+" inoremap : ;
 nnoremap ; :
 nnoremap : ;
 
