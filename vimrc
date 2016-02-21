@@ -12,6 +12,7 @@ set shell=bash
 set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
 
+Plugin 'airblade/vim-gitgutter'
 Plugin 'gmarik/vundle'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'tpope/vim-fugitive'
