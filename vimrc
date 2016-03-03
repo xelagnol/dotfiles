@@ -216,6 +216,8 @@ set showmode
 nnoremap <leader>ev :split $MYVIMRC<CR>  
 nnoremap <leader>sv :source $MYVIMRC<CR> 
 
+nnoremap <Leader>q :q<CR>
+
 " Toggle diffmode
 " Set up a keymapping from <Leader>df to a function call.
 " (Note the function doesn't need to be defined beforehand.)
@@ -259,4 +261,3 @@ nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 " bind \ (backward slash) to grep shortcut
 command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
 nnoremap ] :Ag<SPACE>
-nnoremap <Leader>q :q<CR>
