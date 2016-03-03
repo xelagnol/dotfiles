@@ -243,6 +243,3 @@ au FocusGained * :set relativenumber
 autocmd InsertEnter * :set norelativenumber
 autocmd InsertLeave * :set relativenumber
 
-" " Vim airline
-" set laststatus=2
-" let g:airline#extensions#tagbar#enabled = 1
