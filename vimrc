@@ -22,7 +22,7 @@ Plugin 'tpope/vim-fugitive'
 " Bundle 'Raimondi/delimitMate'
 " supertab lets you use tab to do auto-completion
 Bundle 'ervandew/supertab'
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 " Plugin 'nvie/vim-flake8'
 " tagbar shows a bar with all tags in the doc, not working for me
 Bundle 'majutsushi/tagbar'
@@ -41,7 +41,6 @@ Bundle 'majutsushi/tagbar'
 Bundle 'kchmck/vim-coffee-script'
 " Bundle 'vim-ruby/vim-ruby'
 " Bundle 'uarun/vim-protobuf'
-" Bundle 'kien/ctrlp.vim'
 " Bundle 'scrooloose/syntastic'
 " Bundle 'dag/vim-fish'
 Bundle 'scrooloose/nerdtree'
@@ -62,6 +61,7 @@ Bundle 'groenewege/vim-less'
 " let g:auto_save_silent = 1  " do not display the auto-save notification
 " let g:auto_save_events = ["InsertLeave", "TextChanged"]
 
+let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 let g:ctrlp_map = '<Leader>t'
 let g:ctrlp_custom_ignore = {
       \ 'file': '\v\.(aux|o|pyc)',
