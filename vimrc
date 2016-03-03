@@ -77,6 +77,7 @@ nnoremap <leader>p oimport ipdb; ipdb.set_trace()<esc>j^
 set backupdir=/var/tmp,/tmp     "Put vim backup and swap files in temp location
 set directory=/var/tmp,/tmp
 
+set esckeys
 set hlsearch         " highlights all searched items"
 set shiftwidth=4
 set tabstop=4
