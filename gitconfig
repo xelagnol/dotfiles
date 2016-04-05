@@ -28,6 +28,7 @@
     ci = commit
     co = checkout
     br = branch
+    brs = ! git for-each-ref --sort='committerdate' --format='%(refname)%09%(committerdate)' refs/heads | sed -e 's-refs/heads/--'
     r = reset
     cp = cherry-pick
     gr = grep -Ii
