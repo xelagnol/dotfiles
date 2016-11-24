@@ -1,6 +1,6 @@
 #!/bin/bash
-protected_branches=( "master" "develop" "mapper-support" "branch_for_debugging_this_script" )
-current_branch=$(git symbolic-ref HEAD | sed -e 's,.*/\(.*\),\1,')
+protected_branches=( "master" "dev" "develop" "branch_for_debugging_this_script" )
+current_branch=$(git branch | grep \* | cut -d ' ' -f2)
 
 for protected_branch in "${protected_branches[@]}"
 do
@@ -20,17 +20,17 @@ do
     fi  
 
 done
-read -p "Did you run tests? [y|n|x] (x = no, but that's ok) " -n 1 -r < /dev/tty
-echo
-if echo $REPLY | grep -E '^[Yy]$' > /dev/null
-then
-    echo "Great job!"
-elif echo $REPLY | grep -E '^[Xx]$' > /dev/null
-then
-    echo "Ok, pushing without tests"
+if npm test ; then
+    echo "Tests passed, pushing!"
 else
-    echo "Go run those tests!"
-    echo "Push aborted"
-    exit 1 # push will not execute
+    read -p "Tests failed, do you still want to push? [y|n]" -n 1 -r < /dev/tty
+    if echo $REPLY | grep -E '^[Yy]$' > /dev/null
+    then
+        echo "Ok, pushing without tests"
+    else
+        echo "Go fix those tests!"
+        echo "Push aborted"
+        exit 1 # push will not execute
+    fi
 fi
 exit 0 # push will execute

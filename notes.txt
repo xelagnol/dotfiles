@@ -3,3 +3,6 @@ you should install:
     trash-cli
     brew install android-platform-tools
     brew install ant
+
+run "npm install" in tern bundle dir
+run "npm install -g git+https://github.com/ramitos/jsctags.git"
