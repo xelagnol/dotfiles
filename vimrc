@@ -12,6 +12,12 @@ set shell=bash
 set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
 
+Plugin 'ternjs/tern_for_vim'
+
+nnoremap - :TernRefs<CR>
+nnoremap _ :TernRename<CR>
+
+Plugin 'AndrewRadev/linediff.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'gmarik/vundle'
 Plugin 'Valloric/YouCompleteMe'
@@ -36,12 +42,13 @@ Bundle 'majutsushi/tagbar'
 " endwise adds missing end stuff, like 'end if'"
 " Bundle 'tpope/vim-endwise' 
 " Bundle 'sjl/gundo.vim'
-" Bundle 'pangloss/vim-javascript'
+Bundle 'pangloss/vim-javascript'
+Bundle 'mxw/vim-jsx'
 " Bundle 'tristen/vim-sparkup'
 Bundle 'kchmck/vim-coffee-script'
 " Bundle 'vim-ruby/vim-ruby'
 " Bundle 'uarun/vim-protobuf'
-" Bundle 'scrooloose/syntastic'
+Bundle 'vim-syntastic/syntastic'
 " Bundle 'dag/vim-fish'
 Bundle 'scrooloose/nerdtree'
 Bundle 'tpope/vim-markdown'
@@ -54,6 +61,7 @@ Bundle 'groenewege/vim-less'
 " in, disabled because it can really hurt vim performance
 " Plugin 'szw/vim-tags'
 " Bundle '907th/vim-auto-save'
+Plugin 'tpope/vim-dispatch'
 
 " let g:auto_save = 1  " enable AutoSave on Vim startup
 " let g:auto_save_no_updatetime = 1  " do not change the 'updatetime' option
@@ -69,8 +77,8 @@ let g:ctrlp_custom_ignore = {
 nnoremap <leader>. :CtrlPTag<cr>
 nnoremap <silent> <Leader>b :TagbarToggle<CR>
 noremap <2-LeftMouse> *
-nnoremap <leader>2 :set shiftwidth=2<cr>:set tabstop=2<cr>
 nnoremap <leader>4 :set shiftwidth=4<cr>:set tabstop=4<cr>
+nnoremap <leader>2 :set shiftwidth=2<cr>:set tabstop=2<cr>
 nnoremap <leader>p oimport ipdb; ipdb.set_trace()<esc>j^
 
 set backupdir=/var/tmp,/tmp     "Put vim backup and swap files in temp location
@@ -78,8 +86,8 @@ set directory=/var/tmp,/tmp
 
 set esckeys
 set hlsearch         " highlights all searched items"
-set shiftwidth=4
-set tabstop=4
+set shiftwidth=2
+set tabstop=2
 set expandtab
 set ruler            " displays cursor location
 set backspace=2
@@ -89,6 +97,7 @@ set showmatch        " shows matching braces
 set virtualedit=all  " changes how visual block highlights space w/o text in it
 set incsearch        " incrementally searches as you type, as opposed to waiting until you push enter
 set cursorline
+set cursorcolumn
 set ignorecase
 set smartcase
 set undofile
@@ -107,7 +116,7 @@ let g:solarized_termtrans=1
 " map <F4> :TagbarToggle<CR>
 
 autocmd FileType tex set wrap|set textwidth=65
-autocmd FileType markdown set wrap|set textwidth=65|set shiftwidth=4|set tabstop=4
+autocmd FileType markdown set wrap|set textwidth=65|set shiftwidth=4|set tabstop=2
 autocmd FileType config setf dosini
 au BufNewFile,BufRead *.txt set filetype=markdown
 au BufNewFile,BufRead *.md set filetype=markdown
@@ -133,8 +142,28 @@ let g:sparkupExecuteMapping="<C-h>"
 " highlight EOLWS ctermbg=red guibg=red
 
 let g:syntastic_python_checkers = ['flake8']
-let g:syntastic_javascript_checkers = ['jshint']
 let g:syntastic_python_flake8_args = '--ignore=E111'
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_loc_list_height = 5
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 1
+let g:syntastic_javascript_checkers = ['eslint', 'jsxhint']
+
+let g:syntastic_error_symbol = '❌'
+let g:syntastic_style_error_symbol = '⁉️'
+let g:syntastic_warning_symbol = '⚠️'
+let g:syntastic_style_warning_symbol = '💩'
+
+highlight link SyntasticErrorSign SignColumn
+highlight link SyntasticWarningSign SignColumn
+highlight link SyntasticStyleErrorSign SignColumn
+highlight link SyntasticStyleWarningSign SignColumn
 
 "Fish
 " autocmd FileType fish compiler fish
@@ -149,6 +178,7 @@ filetype indent plugin on
 hi normal ctermfg=12 "sets the main text to brblue properly
 
 set number
+set relativenumber
 
 set foldmethod=indent
 set foldlevelstart=99
@@ -172,8 +202,12 @@ nnoremap <silent> <C-S> :<C-u>Update<CR>
 "map <Space> O<ESC>j
 inoremap <C-s> <esc>:w<cr>a
 nnoremap <C-s> :w<cr>
-" inoremap <F10> <esc>:w rerunplease.tmp<CR>:w<cr>a
-" nnoremap <F10> :w rerunplease.tmp<CR>:w<cr>
+nnoremap <C-q> :q<cr>
+
+"nnoremap <C-a> yiw :Start luke add <C-r>"<CR>
+"nnoremap <C-x> yiw :Start luke addAndAttach <C-r>"<CR>
+inoremap <F10> <esc>:w rerunplease.tmp<CR>:w<cr>a
+nnoremap <F10> :w rerunplease.tmp<CR>:w<cr>
 
 nnoremap g: g;
 nnoremap <F9> ebye /<C-R>"<CR>
@@ -215,8 +249,6 @@ set showmode
 " Quickly open/reload vim
 nnoremap <leader>ev :split $MYVIMRC<CR>  
 nnoremap <leader>sv :source $MYVIMRC<CR> 
-
-nnoremap <Leader>q :q<CR>
 
 " Toggle diffmode
 " Set up a keymapping from <Leader>df to a function call.
@@ -261,3 +293,12 @@ nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 " bind \ (backward slash) to grep shortcut
 command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
 nnoremap ] :Ag<SPACE>
+
+" Console log from insert mode; Puts focus inside parentheses
+imap cll console.log();<Esc>==f(a
+" Console log from visual mode on next line, puts visual selection inside parentheses
+vmap cll yocll<Esc>p
+" Console log from normal mode, inserted on next line with word your on inside parentheses
+nmap cll yiwocll"<Esc>pa:"<Esc>ocll<Esc>p
+
+
