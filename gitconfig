@@ -98,6 +98,9 @@
     sbu = "!f() { git subtree pull --prefix $2 $1 master --squash; }; f"
     # }}}
     # various useful {{{
+
+    # set upstream by default to current branch
+    set-upstream = !git branch --set-upstream-to=origin/`git symbolic-ref --short HEAD`
     # last tag created
     lasttag = describe --tags --abbrev=0
     lt = describe --tags --abbrev=0
