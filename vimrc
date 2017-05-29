@@ -80,6 +80,7 @@ noremap <2-LeftMouse> *
 nnoremap <leader>4 :set shiftwidth=4<cr>:set tabstop=4<cr>
 nnoremap <leader>2 :set shiftwidth=2<cr>:set tabstop=2<cr>
 nnoremap <leader>p oimport ipdb; ipdb.set_trace()<esc>j^
+nnoremap <leader>n :set norelativenumber!<cr>:set nonumber!<cr>
 
 set backupdir=/var/tmp,/tmp     "Put vim backup and swap files in temp location
 set directory=/var/tmp,/tmp
