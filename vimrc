@@ -42,13 +42,10 @@ Bundle 'majutsushi/tagbar'
 " endwise adds missing end stuff, like 'end if'"
 " Bundle 'tpope/vim-endwise' 
 " Bundle 'sjl/gundo.vim'
-Bundle 'pangloss/vim-javascript'
-Bundle 'mxw/vim-jsx'
 " Bundle 'tristen/vim-sparkup'
 Bundle 'kchmck/vim-coffee-script'
 " Bundle 'vim-ruby/vim-ruby'
 " Bundle 'uarun/vim-protobuf'
-Bundle 'vim-syntastic/syntastic'
 " Bundle 'dag/vim-fish'
 Bundle 'scrooloose/nerdtree'
 Bundle 'tpope/vim-markdown'
@@ -62,6 +59,10 @@ Bundle 'groenewege/vim-less'
 " Plugin 'szw/vim-tags'
 " Bundle '907th/vim-auto-save'
 Plugin 'tpope/vim-dispatch'
+
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
+Plugin 'vim-syntastic/syntastic'
 
 " let g:auto_save = 1  " enable AutoSave on Vim startup
 " let g:auto_save_no_updatetime = 1  " do not change the 'updatetime' option
@@ -142,29 +143,15 @@ let g:sparkupExecuteMapping="<C-h>"
 " autocmd InsertLeave * syn clear EOLWS | syn match EOLWS excludenl /\s\+$/
 " highlight EOLWS ctermbg=red guibg=red
 
-let g:syntastic_python_checkers = ['flake8']
-let g:syntastic_python_flake8_args = '--ignore=E111'
-
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_loc_list_height = 5
-let g:syntastic_auto_loc_list = 0
+let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 1
-let g:syntastic_javascript_checkers = ['eslint', 'jsxhint']
-
-let g:syntastic_error_symbol = '❌'
-let g:syntastic_style_error_symbol = '⁉️'
-let g:syntastic_warning_symbol = '⚠️'
-let g:syntastic_style_warning_symbol = '💩'
-
-highlight link SyntasticErrorSign SignColumn
-highlight link SyntasticWarningSign SignColumn
-highlight link SyntasticStyleErrorSign SignColumn
-highlight link SyntasticStyleWarningSign SignColumn
+let g:syntastic_check_on_wq = 0
+let g:syntastic_javascript_checkers = ['eslint']
 
 "Fish
 " autocmd FileType fish compiler fish
