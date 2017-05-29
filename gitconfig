@@ -27,7 +27,7 @@
     cl = clone
     ci = commit
     co = checkout
-    br = branch
+    br = branch 
     brs = ! git for-each-ref --sort='committerdate' --format='%(refname)%09%(committerdate)' refs/heads | sed -e 's-refs/heads/--'
     r = reset
     cp = cherry-pick
@@ -93,9 +93,9 @@
     # }}}
     # subtree {{{
     #   add
-    sba = "!f() { git subtree add --prefix $2 $1 master --squash; }; f"
+    sba = "!f() { git subtree add --prefix $2 $1 master --squash; }; f" 
     #   update/pull
-    sbu = "!f() { git subtree pull --prefix $2 $1 master --squash; }; f"
+    sbu = "!f() { git subtree pull --prefix $2 $1 master --squash; }; f" 
     # }}}
     # various useful {{{
 
