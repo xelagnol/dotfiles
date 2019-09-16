@@ -19,9 +19,9 @@ alias mv='mv -i'
 alias cp='cp -i'
 alias rm="echo Sorry, rming is not allowed. Use 'del' to move the file to the trash dir, or to really delete the file, use the full path i.e. '/bin/rm'"
 alias del="trash-put"
-alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
-alias vi='/Applications/MacVim.app/Contents/MacOS/Vim'
-alias v='/Applications/MacVim.app/Contents/MacOS/Vim'
+alias vim='/usr/local/bin/vi'
+alias vi='/usr/local/bin/vi'
+alias v='/usr/local/bin/vi'
 alias s='~/bin/livesearch'
 
 function fh { f . -iname "*$1*"; }
